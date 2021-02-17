@@ -18,6 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
+            app:elevation="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -31,28 +32,27 @@
         </com.google.android.material.appbar.AppBarLayout>
 
         <TextView
-            android:id="@+id/login_title_txt_01"
+            android:id="@+id/sign_up_title_txt_01"
             style="@style/Gotham_16sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="50dp"
             android:text="@string/welcome_to"
             android:textColor="@color/point_01"
             android:textFontWeight="200"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/sign_up_appbar" />
 
         <TextView
-            android:id="@+id/login_title_txt_02"
+            android:id="@+id/sign_up_title_txt_02"
             style="@style/PassOrderTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/pass_order_title"
             android:textFontWeight="700"
-            app:layout_constraintStart_toStartOf="@+id/login_title_txt_01"
-            app:layout_constraintTop_toBottomOf="@id/login_title_txt_01"
+            app:layout_constraintStart_toStartOf="@+id/sign_up_title_txt_01"
+            app:layout_constraintTop_toBottomOf="@id/sign_up_title_txt_01"
             tools:textColor="@color/point_01" />
 
         <View
@@ -60,8 +60,8 @@
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:background="@color/point_01"
-            app:layout_constraintStart_toStartOf="@+id/login_title_txt_02"
-            app:layout_constraintTop_toBottomOf="@+id/login_title_txt_02"
+            app:layout_constraintStart_toStartOf="@+id/sign_up_title_txt_02"
+            app:layout_constraintTop_toBottomOf="@+id/sign_up_title_txt_02"
             app:layout_constraintWidth_percent="0.04"
             android:layout_marginTop="24dp"/>
 
