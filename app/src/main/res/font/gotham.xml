@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <font
+        android:font="@font/gotham_light"
+        android:fontWeight="200"
+        android:fontStyle="normal"
+        app:font="@font/gotham_light"
+        app:fontWeight="200"
+        app:fontStyle="normal"
+        tools:ignore="UnusedAttribute" />
+
+    <font
+        android:font="@font/gotham_bold"
+        android:fontWeight="700"
+        android:fontStyle="normal"
+        app:font="@font/gotham_bold"
+        app:fontWeight="700"
+        app:fontStyle="normal"
+        tools:ignore="UnusedAttribute" />
+
+</font-family>
