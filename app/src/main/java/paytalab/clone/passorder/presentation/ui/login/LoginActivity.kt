@@ -1,16 +1,12 @@
-package paytalab.clone.passorder.presentation.ui
+package paytalab.clone.passorder.presentation.ui.login
 
-import android.graphics.Color
-import android.os.Build
 import android.os.Bundle
-import android.view.View
-import android.view.WindowInsets
-import android.view.WindowInsetsController
 import androidx.core.content.ContextCompat
 import paytalab.clone.passorder.R
 import paytalab.clone.passorder.databinding.ActivityMainBinding
 import paytalab.clone.passorder.domain.util.showToast
 import paytalab.clone.passorder.presentation.base.BaseActivity
+import paytalab.clone.passorder.presentation.ui.CloneApplication
 
 class LoginActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
