@@ -62,9 +62,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/login_email_btn"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            style="@style/Email_Login_Button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
@@ -73,18 +73,12 @@
             android:gravity="center"
             android:paddingVertical="16dp"
             android:text="이메일로 로그인"
-            android:textAlignment="center"
             android:textColor="@color/point_01"
+            android:backgroundTint="@color/white"
             android:textFontWeight="700"
-            android:textSize="16sp"
-            app:icon="@drawable/ic_email"
-            app:iconTint=""
-            app:iconGravity="textStart"
-            app:iconPadding="10dp"
             app:layout_constraintBottom_toTopOf="@+id/login_sign_up_email_txt"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:strokeColor="@color/point_01" />
+            app:layout_constraintStart_toStartOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
