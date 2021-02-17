@@ -14,13 +14,7 @@ import paytalab.clone.passorder.presentation.ui.CloneApplication
 
 class EmailFragment : BaseFragment<FragmentEmailBinding>(R.layout.fragment_email) {
 
-    private lateinit var mImm : InputMethodManager
     private val mViewModel : SignUpViewModel by activityViewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        mImm = CloneApplication.getInstance().getInputMethodManager()
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

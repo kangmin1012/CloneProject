@@ -42,6 +42,7 @@
             android:textColor="@color/point_01"
             android:text="@={viewModel.email}"
             android:paddingVertical="20dp"
+            android:ellipsize="end"
             app:layout_constraintStart_toStartOf="@+id/sign_up_email_txt"
             app:layout_constraintTop_toBottomOf="@+id/sign_up_email_txt"
             android:importantForAutofill="no" />
