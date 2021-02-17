@@ -16,18 +16,7 @@
         android:layout_height="match_parent"
         tools:context=".presentation.ui.signup.EmailFragment">
 
-        <TextView
-            android:id="@+id/sign_up_email_title"
-            style="@style/Nanum_20sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="이메일로 회원가입하기"
-            android:textColor="@color/point_01"
-            android:textFontWeight="700"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+
 
         <TextView
             android:id="@+id/sign_up_email_txt"
@@ -38,8 +27,9 @@
             android:textColor="@color/point_01"
             android:textFontWeight="700"
             android:layout_marginTop="44dp"
-            app:layout_constraintStart_toStartOf="@+id/sign_up_email_title"
-            app:layout_constraintTop_toBottomOf="@+id/sign_up_email_title" />
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/sign_up_email_edt"
