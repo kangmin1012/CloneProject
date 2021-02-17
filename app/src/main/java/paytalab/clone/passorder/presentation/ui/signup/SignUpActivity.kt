@@ -5,10 +5,9 @@ import android.os.Bundle
 import android.view.WindowInsetsController.*
 import android.view.inputmethod.InputMethodManager
 import androidx.activity.viewModels
+import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
 import dagger.hilt.android.AndroidEntryPoint
 import gun0912.tedkeyboardobserver.TedKeyboardObserver
 import paytalab.clone.passorder.R
@@ -20,11 +19,11 @@ import paytalab.clone.passorder.presentation.ui.CloneApplication
 
 @AndroidEntryPoint
 class SignUpActivity : BaseActivity<ActivitySignUpBinding>(R.layout.activity_sign_up) {
-    private lateinit var mImm : InputMethodManager
+    private lateinit var mImm: InputMethodManager
 
-    private val mViewModel : SignUpViewModel by viewModels()
+    private val mViewModel: SignUpViewModel by viewModels()
 
-    private lateinit var navController : NavController
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,7 +50,7 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(R.layout.activity_sig
     override fun setObserve() {
         TedKeyboardObserver(this)
             .listen { isShow ->
-                if (!isShow){
+                if (!isShow) {
                     currentFocus?.clearFocus()
                 }
             }
@@ -59,8 +58,8 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(R.layout.activity_sig
 
     override fun setClickEvent() {
         binding.signUpContainer.setOnClickListener {
-            if (mImm.isAcceptingText){
-                mImm.hideSoftInputFromWindow(it.windowToken,0)
+            if (mImm.isAcceptingText) {
+                mImm.hideSoftInputFromWindow(it.windowToken, 0)
             }
         }
 
@@ -69,13 +68,25 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(R.layout.activity_sig
         }
 
         binding.signUpNextBtn.setOnClickListener {
-            if (mViewModel.checkEmail()){
-                val direction = EmailFragmentDirections.actionEmailFragmentToPasswordFragment()
-                navController.navigate(direction)
-            }
-            else{
-                showToast("형식이 안맞네요 ㅜ")
+
+            val fragment = getFragment()
+
+            if (fragment is EmailFragment) {
+                if (mViewModel.checkEmail()) {
+                    val direction = EmailFragmentDirections.actionEmailFragmentToPasswordFragment()
+                    navController.navigate(direction)
+                }
+            } else if (fragment is PasswordFragment) {
+                showToast("비밀번호오")
             }
         }
+    }
+
+
+    private fun getFragment(): Fragment? {
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.sign_up_fragment) as Fragment
+
+        return navHostFragment.childFragmentManager.fragments[0]
     }
 }

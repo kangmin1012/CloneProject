@@ -60,6 +60,7 @@ dependencies {
 
     // Preferences Data Store
     implementation "androidx.datastore:datastore-preferences:1.0.0-alpha06"
+    androidTestImplementation 'androidx.test:rules:1.4.0-alpha04'
 
     def nav_version = "2.3.3"
 
