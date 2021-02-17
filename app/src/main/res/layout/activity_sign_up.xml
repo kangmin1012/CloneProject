@@ -6,12 +6,17 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="paytalab.clone.passorder.presentation.ui.signup.SignUpViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sign_up_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.ui.singup.SignUpActivity">
+        tools:context=".presentation.ui.signup.SignUpActivity">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/sign_up_appbar"

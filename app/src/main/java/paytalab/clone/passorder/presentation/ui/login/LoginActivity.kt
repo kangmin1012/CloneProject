@@ -8,7 +8,7 @@ import paytalab.clone.passorder.databinding.ActivityMainBinding
 import paytalab.clone.passorder.domain.util.showToast
 import paytalab.clone.passorder.presentation.base.BaseActivity
 import paytalab.clone.passorder.presentation.ui.CloneApplication
-import paytalab.clone.passorder.presentation.ui.singup.SignUpActivity
+import paytalab.clone.passorder.presentation.ui.signup.SignUpActivity
 
 class LoginActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +24,11 @@ class LoginActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) 
         setClickEvent()
     }
 
-    private fun setClickEvent() {
+    override fun setObserve() {
+
+    }
+
+    override fun setClickEvent() {
         binding.loginEmailBtn.setOnClickListener {
             val email = binding.loginEmailEdt.text.toString()
             showToast(email)

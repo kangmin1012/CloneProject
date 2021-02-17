@@ -6,13 +6,15 @@
     tools:ignore="HardcodedText,UnusedAttribute,TextFields">
 
     <data>
-
+        <variable
+            name="viewModel"
+            type="paytalab.clone.passorder.presentation.ui.signup.SignUpViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.ui.singup.EmailFragment">
+        tools:context=".presentation.ui.signup.EmailFragment">
 
         <TextView
             android:id="@+id/sign_up_email_title"
@@ -48,6 +50,7 @@
             android:layout_marginEnd="20dp"
             style="@style/Nanum_14sp"
             android:textColor="@color/point_01"
+            android:text="@={viewModel.email}"
             android:paddingVertical="20dp"
             app:layout_constraintStart_toStartOf="@+id/sign_up_email_txt"
             app:layout_constraintTop_toBottomOf="@+id/sign_up_email_txt"

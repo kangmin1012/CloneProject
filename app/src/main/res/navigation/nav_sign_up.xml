@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/emailFragment"
-        android:name="paytalab.clone.passorder.presentation.ui.singup.EmailFragment"
+        android:name="paytalab.clone.passorder.presentation.ui.signup.EmailFragment"
         android:label="EmailFragment"
         tools:layout="@layout/fragment_email"/>
 </navigation>
