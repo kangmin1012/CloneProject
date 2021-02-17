@@ -19,6 +19,8 @@ class PasswordFragment : BaseFragment<FragmentPasswordBinding>(R.layout.fragment
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        super.onCreateView(inflater, container, savedInstanceState)
+
         binding.apply {
             lifecycleOwner = viewLifecycleOwner
             viewModel = mViewModel

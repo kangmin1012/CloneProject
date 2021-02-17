@@ -9,7 +9,8 @@ class SignUpUseCase @Inject constructor(private val repo : SignUpRepository) {
 
     fun checkEmail(email : String?) : Boolean {
         return if (email != null){
-            PatternObject.ePattern.matcher(email).matches()
+//            PatternObject.ePattern.matcher(email).matches()
+            true
         } else{
             false
         }

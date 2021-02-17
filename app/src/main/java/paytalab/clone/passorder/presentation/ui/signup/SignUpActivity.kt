@@ -5,6 +5,10 @@ import android.os.Bundle
 import android.view.WindowInsetsController.*
 import android.view.inputmethod.InputMethodManager
 import androidx.activity.viewModels
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
 import dagger.hilt.android.AndroidEntryPoint
 import gun0912.tedkeyboardobserver.TedKeyboardObserver
 import paytalab.clone.passorder.R
@@ -20,6 +24,8 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(R.layout.activity_sig
 
     private val mViewModel : SignUpViewModel by viewModels()
 
+    private lateinit var navController : NavController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding.apply {
@@ -31,9 +37,15 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(R.layout.activity_sig
         // status bar icon이 하얀색일 경우 회색으로 변경
         window.setStatusBarIcon()
 
+        setNavController()
+
         binding.signUpTitleTxt02.paint.shader =
             CloneApplication.getInstance().setTitleGradient(binding.signUpTitleTxt02)
 
+    }
+
+    private fun setNavController() {
+        navController = Navigation.findNavController(this, R.id.sign_up_fragment)
     }
 
     override fun setObserve() {
@@ -53,12 +65,13 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(R.layout.activity_sig
         }
 
         binding.signUpToolbar.setNavigationOnClickListener {
-            showToast("hello")
+            navController.navigateUp()
         }
 
         binding.signUpNextBtn.setOnClickListener {
             if (mViewModel.checkEmail()){
-                showToast("형식에 맞아요")
+                val direction = EmailFragmentDirections.actionEmailFragmentToPasswordFragment()
+                navController.navigate(direction)
             }
             else{
                 showToast("형식이 안맞네요 ㅜ")

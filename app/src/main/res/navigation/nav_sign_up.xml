@@ -9,5 +9,21 @@
         android:id="@+id/emailFragment"
         android:name="paytalab.clone.passorder.presentation.ui.signup.EmailFragment"
         android:label="EmailFragment"
-        tools:layout="@layout/fragment_email"/>
+        tools:layout="@layout/fragment_email">
+        <action
+            android:id="@+id/action_emailFragment_to_passwordFragment"
+            app:destination="@id/passwordFragment"
+            app:popUpToInclusive="false"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/passwordFragment"
+        android:name="paytalab.clone.passorder.presentation.ui.signup.PasswordFragment"
+        android:label="PasswordFragment"
+        tools:layout="@layout/fragment_password"/>
+
 </navigation>
