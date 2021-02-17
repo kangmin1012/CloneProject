@@ -4,6 +4,8 @@ package paytalab.clone.passorder.presentation.ui.signup
 import android.os.Bundle
 import android.view.WindowInsetsController.*
 import android.view.inputmethod.InputMethodManager
+import androidx.activity.viewModels
+import dagger.hilt.android.AndroidEntryPoint
 import gun0912.tedkeyboardobserver.TedKeyboardObserver
 import paytalab.clone.passorder.R
 import paytalab.clone.passorder.databinding.ActivitySignUpBinding
@@ -12,13 +14,17 @@ import paytalab.clone.passorder.domain.util.showToast
 import paytalab.clone.passorder.presentation.base.BaseActivity
 import paytalab.clone.passorder.presentation.ui.CloneApplication
 
+@AndroidEntryPoint
 class SignUpActivity : BaseActivity<ActivitySignUpBinding>(R.layout.activity_sign_up) {
     private lateinit var mImm : InputMethodManager
+
+    private val mViewModel : SignUpViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding.apply {
             lifecycleOwner = this@SignUpActivity
+            viewModel = mViewModel
         }
         mImm = CloneApplication.getInstance().getInputMethodManager()
 
@@ -48,6 +54,15 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>(R.layout.activity_sig
 
         binding.signUpToolbar.setNavigationOnClickListener {
             showToast("hello")
+        }
+
+        binding.signUpNextBtn.setOnClickListener {
+            if (mViewModel.checkEmail()){
+                showToast("형식에 맞아요")
+            }
+            else{
+                showToast("형식이 안맞네요 ㅜ")
+            }
         }
     }
 }

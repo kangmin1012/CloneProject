@@ -16,7 +16,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object NetworkServiceModule {
+class NetworkServiceModule {
     private val BASE_URL = "https://development.passorder.me:9999/"
 
     private fun getHttpLoggingInterceptor() : HttpLoggingInterceptor {
