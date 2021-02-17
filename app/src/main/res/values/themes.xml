@@ -13,6 +13,9 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@color/white</item>
+
+        <!-- for EditText Color -->
+        <item name="colorOnSurface">@color/point_01</item>
     </style>
 
     <style name="Email_Login_Button" parent="Widget.MaterialComponents.Button.TextButton">
