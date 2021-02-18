@@ -14,5 +14,11 @@ abstract class BaseActivity<T : ViewDataBinding>(@LayoutRes private val layoutRe
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this,layoutResId)
+        setObserve()
+        setClickEvent()
     }
+
+    abstract fun setObserve()
+
+    abstract fun setClickEvent()
 }

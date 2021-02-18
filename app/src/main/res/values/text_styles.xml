@@ -17,6 +17,10 @@
         <item name="android:textSize">16sp</item>
     </style>
 
+    <style name="Nanum_20sp" parent="FontNanum">
+        <item name="android:textSize">20sp</item>
+    </style>
+
     <style name="Nanum_16sp" parent="FontNanum">
         <item name="android:textSize">16sp</item>
     </style>
